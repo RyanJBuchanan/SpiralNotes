@@ -1,0 +1,167 @@
+\documentclass{article}
+
+\newtheorem{dn}{Definition}
+\newtheorem{pn}{Proposition}
+\newtheorem{rk}{Remark}
+
+\usepackage{amsfonts}
+\usepackage[T1]{fontenc}
+\usepackage{mathtools}
+\usepackage{graphicx}
+
+\title{Open and closed voids}
+\author{Ryan J. Buchanan}
+\date{Aug 18, 2023}
+
+\begin{document}
+	\maketitle
+
+\section{Background}
+	\subsection{Theories of Nothing}
+	In 2022, Curt Jaimungal hosted the PACE1 competition on YouTube, attracting dozens of entrants. Among these was James Sirois, who entered with a video on his proposal for a new framework called ``Infinity Limited." Over the course of the following months, a small subcommunity of the Theories of Everything (ToE) community formed, known as the TON (Theories of Nothing) community.
+	
+	After a stimulating video call with approximately ten participants from the TON community, I quickly filled six pages of my notebook some mathematicizations of nothingness. I would shortly thereafter publish a document titled ``On Nothingness: Existential Quantification and Typed Membership Conditions" which garnered a small shockwave of attention. This document is now private. I hope that the current paper at hand can serve as the (as of yet) definitive treatise on my inquiries into this realm.
+\section{Preliminary definitions}
+	\begin{dn}
+		Let $\mathfrak{C}$ be a class. A urelement, $\mathfrak{u}$, is a member of $\mathfrak{C}$ which fails to biject to $SSets$.
+	\end{dn}
+	\begin{rk}
+		We will simply call urelements "elements" and treat them as such; however, we defined them merely to clarify the distinction between ZF+U and other models of ZFC which do not allow urelements. These models will largely be irrelevant to us.
+	\end{rk}
+	\begin{dn}
+		A class, $\mathfrak{C}$, is a set of equivalence relations, where for every member $x$ of $\mathfrak{C}$, there is an equivalence xRx, which is the $\emph{local identity}$ of x.
+	\end{dn}
+	\begin{pn}
+		Let $\mathfrak{U}|_g$ be a class-theoretic universe. Assuming the restriction to g is finite, there exists at least one urelement.
+	\end{pn}
+	
+	Proof: Let $\mathfrak{U}|_g$ be regularly divisible; i.e., for every smooth map $\phi$, there is a discrete binary representation $\phi_\ast$ which takes the ends of a path to centers of spheres. Let n(g) be the cardinality of g. Then, there is always some k-fold covering of $\mathfrak{U}|_{g|_{\phi}}$, such that 
+		\[k > n\]
+	and so the pidgeonhole lemma applies. Ergo, if each divisible unitoid is to be treated as an element, at least one ought to be a urelement.
+	
+	\begin{dn}
+		A unitoid is unital magma which may be existentially typed.
+	\end{dn}
+	
+	By existentially typed, we mean that there is an inclusion 
+	$$(\Upsilon \in^\ast \mathfrak{U}_\infty) \leftarrow \exists$$ 
+	such that $\emph{strong existence}$, or in other words, the classical existential quantifier, verifies or confirms the antecedence of some elemental form. In the bijective case, such a strong quantification exists for the typed member, but otherwise the existence of existentially typed elements fails to commute with strong existence.
+	
+	\begin{dn}
+		A $\emph{typeme}$ is an existentially typed unitoid
+	\end{dn}
+	
+	This neologism is introduced to counterbalance the predominance of meme- and gene-based thinking. 
+	
+	\begin{rk}
+		We can see plainly that the unitoids consist in both the atoms and the urelements; the elements consist in either the atoms, or in the unitoids, depending on one's choice of model. Here, we prefer the latter. 
+	\end{rk}
+	
+	\begin{dn}
+		An $\emph{atomic element}$, or simply an $\emph{element}$, is any unitoid which is not a urelement.
+	\end{dn}
+\section{Voids}
+\subsection{Overview}
+Let $\mathcal{M}$ be a Cartesian closed, symmetric monoidal structure, and let there be a pullback 
+	$$\Phi \xleftarrow{\mathcal{I}} \mathcal{M}$$
+in the category $\mathfrak{U}_k$. The corresponding functor in ${\mathfrak{U}_k}^{op}$ is forgetful, but faithful. We may freely associate $\Theta$ with a class of transcendental characters, i.e. characters which are not algebraic over $\mathcal{M}$, and write
+	$$\Theta\backslash\mathcal{M} \simeq \Theta^\dagger$$
+	
+This class, $\Theta^\dagger$ is special, because in the classical world, none of its unitoids should exist.
+
+\begin{dn}
+	An $\emph{admissible fiber}$, f, is a fiber between a local identity and a universal metric, in which the base and total space are comparable.
+\end{dn}
+\begin{dn}
+	Let $\mathcal{LX}$ be a loop stack. We call $\mathcal{LX}=\mathcal{V}$ a void if and only if there are no open neighborhoods containing $\mathcal{V}_{CENT}$ which admit connections outside $\mathcal{V}$.
+\end{dn}
+
+\subsection{Choice}
+	Whether or not a given loop stack constitutes a ``void" essentially boils down to a $\emph{choice}$ of some small cardinal, c, which parameterizes the fineness of a space. We have
+		$$\mathcal{LX}_c = \sum_{p=1}^{c}\int\mathcal{TM}$$
+	where
+		$$\mathcal{TM} = {\Omega_x}^y 2\pi$$
+	and where
+		$$xRcRy \simeq Suc_\pi \mathcal{U}(c)$$
+	gives the necessary chain
+		$$\square^{-q} \to (\mathcal{E}|\diamond|\mathcal{E})=\mathfrak{N}$$
+	and $\mathcal{E}$ is the $\emph{chronic energy}$ of a static body along the field of outbound connections originating from c. 
+	
+	This gives us a map
+		$$\square^{-q} \to M^2C^4; \forall q \in \mathbb{N}$$
+		
+	By design, a void is so contrived as to be an arbitrary designation of isolation. That is to say, our choice of c gives us
+		$$LocSys(c) = \tau \to \tau-n$$
+	and we are free to choose some natural number to characterize the sample space.
+	
+\begin{dn}
+	The $\emph{population}$ of a space $\mathcal{K}_i$ is the number of conformal holons observed at the projection of $\int_i$ to some manifold $\mathcal{M}$. Whereby $\emph{holon},$ we mean a kinetic actor of arbitrary type which admits locally ringed with inner homs that locally resemble the homset of a universe.
+\end{dn}
+
+\subsection{Non-existence}
+\begin{pn} Non-existence
+	$$x \notin^P \mathcal{V};$$
+	$$\forall \mathcal{V},P \in \mathfrak{U}_\infty$$
+\end{pn}
+	
+	This states that for any digit x, there is no place in a void $\mathcal{V}$ in which x is classically true. By classically true, we mean:
+\begin{dn}
+	Let $d(x,y)$ be the distance function on objects x and y. Let $\tau$_{\mathbb{B}$ be:
+	 \[
+	\tau_c = \left\{\begin{array}{lr}
+		1, & \text x=y\ &
+		0, & \text else\
+	\end{array}\right\}
+	\]
+	
+	A unitoid which has $\tau_c$=1 will be called ``classically true" and ``classically false" otherwise.
+\end{dn}
+	
+	In other words, a classical truth value of a variable x in a place corresponds to the strong existence of an algebraic character bijecting to x. This expresses the set of all fixed points under logics invoking the law of the excluded middle.
+
+	The astute reader will note that there may be some type $\mathcal{P}$ which bijects to a place a place for x in $\mathcal{V}$. In such a case, there is no atomic realization of x in any non-pathological field. For this reason, it may be worthwhile to consider the field of superreal numbers pioneered by Hugh Woodin.
+
+\subsection{Openness and closure}
+\begin{dn}
+	Let $\mathcal{I}$ be an interval $(a,b) \cup \lambda$, where
+		$$\lambda = Suc^{-1}(a) \cup Suc(b)$$
+	$\lambda$ is then called the $\emph{closure}$ of $\mathcal{I}$. Further, we define the $\emph{closure operator}$  $\sigma_\lambda$ as a short trip from $\mathcal{I} \backslash\lambda$ to $\mathcal{I}$.
+\end{dn}
+
+\subsubsection{Open Voids}
+	Let $\mathcal{D}$ be a dynamical system. We have
+	$$x \in^\mathcal{D} y := x:X;DRX$$
+giving us the membership-existential duality. On the left hand side (the definiendum), we have two unitoids, x and y, and single typeme $x \to^D y$. On the right hand side (the definiens), we have a class-level inclusion of a free variable into a type, and a relationship between said type and the dynamical system.
+
+\begin{dn}
+	A void, $\mathcal{V}$, shall be called $\emph{open}$ if there is some map $\mathcal{D} \to \omega$ which makes the inclusion $x \in^\mathcal{D} y$ classically true for a fixed x and y.
+\end{dn}
+
+An open void is characterized by the property that it requires some notion of $\emph{forcing}$, or substitution of the $\mathcal{D}$-term in order to obtain a classically true embedding.
+
+\subsubsection{Closed Voids}
+A closed void is the sort of thing that most closely resembles the absolute nothingness one might envision. Therefore,
+$$\bar{\mathcal{V}} = \aleph_{othing}
+
+It is impossible to define a function using the character $\bar{\mathcal{V}}$, and so any such function will remain algebraically undefined, and there is no transcendental which may be invoked in order to recover a definable function.
+
+We have:
+$$\bar{\mathcal{V}} \star \ast = \mathfrak{undefined}$$
+$$\forall{\ast,\star}
+
+\subsubsection{Incompleteness}
+Godel's incompleteness theorems tells us:
+$$G(\bar{\mathcal{V}}) \neq n$$
+$$\forall n$$
+where 
+$$G(test) = \lim\limits_{certainty} \propto {\lim\limits_{consistenty}}^{-1}$$
+
+\subsubsection{Uncertainty}
+Heisenberg's uncertainty principle tells us that 
+	$$K(\bar{\mathcal{V}}) \propto K(else)$$
+so that
+	$$E(\partial x) + E(\int_x X) = 1$$
+where
+	$$E(A)$$
+is the normalized proportion of energy a given system has allotted for action A.
+\end{document}
