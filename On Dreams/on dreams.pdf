@@ -1,0 +1,263 @@
+\documentclass{article}
+
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsmath}
+
+\newtheorem{dn}{Definition}
+\newtheorem{rk}{Remark}
+
+\title{The Psychological Role of Condensation and the Reification of Potentiatied Dream States}
+\author{Ryan J. Buchanan}
+\date{August 31, 2023}
+
+\usepackage{amsmath}
+
+\begin{document}
+	\maketitle
+	
+	\section{Dreams}
+	
+	When the normative control afforded by the superego is relinquished to a sufficient degree, consciousness is relaxed to the state of a dream. Symbolically:
+	
+	\begin{equation}
+		\square(\mathcal{A}_{eff})\Rightarrow \diamond(\mathcal{A}_{eff})
+	\end{equation}
+	
+	
+	Whereas in the waking life, certain aspects of factual origin lie in the periphery of one's awareness, in the $\emph{dream}$, these aspects are realized (to use the term loosely) transigently. Although it is through dreaming we find inspiration, or a sort of ``soft motivation," we find a rather inert object in the context of the $\emph{actual}$ world. As a result, we find the following formula:
+	
+	\begin{equation}
+		\int_{\mathcal{A}_{eff}}^{\infty|_{\mathcal{R}}} \mapsto \mathfrak{D}_{aff}
+	\end{equation}
+		
+	is a valid syntactic expression of the observed phenomenon of dreaming.
+	
+	\begin{dn}
+		A litmus, $\ell_\alpha$, is a socio-cognitive test which transfers knowledge of one's cognitive state to the actor performing said test.
+	\end{dn}
+	
+	Examples of the litmus may be counting one's fingers, or checking one's location after entering/exiting a doorway to ensure that it logically connects to its other side. Such tests are sometimes called "reality checks." However, this is somewhat a misleading notion; it is not $\emph{merely}$ reality which is checked for, but a general feeling of $\emph{ephemerality}$, if we must. As such, the results of this test may be either of the following outcomes:
+	
+	\begin{equation}
+			\ell_\alpha:
+		\begin{cases}
+			\alpha = \mathcal{R}\\
+			\alpha = \mathfrak{D}
+		\end{cases}
+	\end{equation}
+
+	where some vague notion of ``reality" (as a practical construct) is symbolized by $\mathcal{R}$, and the concomitant fantastical realm of the dream is signified by the other symbol.
+	\subsection{Potentiation}
+	Firstly, dreams themselves may be potentiated by sleep deprivation, melatonin, or a variety of other mechanisms. Yet, it is the dream in-and-of itself which potentiates the drive of the waking person, and the activity and pursuits identified with the ``real action" of a specified cognitive agent.
+	The ``in-and-of-itselfness" of the dream is a satiatory property which is uniquely lacked by the waking state, which by comparison is a frustrated, tense, and desire ridden domain, whose soil is tilled by the objet a.
+	
+		\begin{equation}
+			\mathcal{A}\setminus{\widehat{a}} \mapsto \mathfrak{D}_{Cent}t...
+		\end{equation}
+		
+	The universal property of the dream is that, for every object $\mathfrak{o}$, there is a projective morphism from a zero object which is locally full, whereby locally full we mean:
+	
+	\begin{dn}
+		a place $\mathfrak{p}$ in a value ring is said to be locally full iff $\neg \widehat{a}$ is a valid proposition about $\mathfrak{p}$.
+	\end{dn}
+	
+	Indeed, it is only after the lowest level(s) of Mazlow's hierarchy have been met that one has secured the privilege to sleep. As such, sleep is a symbolic affective action which reifies ones status as an evolutionarily privileged species. Thus, the repression of one's need to survive is sublimated into an emblem which symbolizes the survived aspects of one's unconscious, which, having been prior secured by conscious tension, have been subdued by a more Platonic regime.
+	
+	Sleep is a particular mechanism of ego-suicide whose mandate of passivity restores the original firmament of unbound telesis. As espoused by Saussore, the bound state of telesis, that which is animalistic, carnal, and concretely real, is to the latent state as one side of a paper is to another. This is the canonical bijection; the bilateral sign, so to speak.
+	
+	\begin{dn}
+		A Koszul connection$^1$ is a rank one isomorphism of the following form:
+	\end{dn}
+	
+	\begin{equation}
+		 \widehat{\Psi}:	\mathcal{U}^\infty \xleftrightarrow{\text{a}} \mathfrak{U}_{\delta_i(\kappa)}
+	\end{equation}
+	
+	\footnotetext[1]{Koszul (named for Jean Louis Koszul) is a semantically enriched term, bearing resemblence to ``casual," ``causal," and, as pointed out by my friend Oliver Hancock, Cauchy.}
+	
+	\begin{dn}[Smallness]
+		A proper action, $\mathfrak{a}$, is said to be $\delta_i$-$\emph{small}$ within some universe $\mathfrak{U}$ if, for every uncountable cardinal $\kappa$ which is a least upper bound, there is a path $i\colon\epsilon\to^\delta\kappa$, where $\delta$ is a transitive binary relationship.
+	\end{dn}
+	
+	Writing
+	
+	\begin{equation}
+		\sum_{\delta_i=\o}^{\kappa}\delta_i(n) = \bar{q} = Spec(Q^{\dagger \lor \neg \dagger})
+	\end{equation}
+	
+	we obtain, effectively a quantum of action
+	
+	\subsection{Inhibition}
+	``REM sleep paralysis is initiated when glutamatergic SubC cells activate neurons in the ventral medial medulla, which causes release of GABA and glycine onto skeletal motoneurons." 
+	
+	- {Fraigne, et} ${al.}$ 
+	
+	$\emph{REM Sleep at its Core – Circuits, Neurotransmitters, and Pathophysiology}$
+	
+	$ $
+	
+	It has been known since at least the time of Freud that censorship plays a role in the act of dreaming. The dreamer is accosted, and the practical, survivalist mindset of the dreamer is arrested at once. As a result, one's domain of actions (as they appear in the consensus reality) is reduced to lying, grunting, and occasional flopping. Precisely, what is diminished here, is one's capacity to make $\emph{effective investments}$ in one's sociopolitical environment. This inertia, $\Lambda_\emptyset$, is an arbitrarily productive generator of future semiotic confluence. $\Lambda_\emptyset$ operates upon, and is operated upon by an integral stabilizer:
+	
+	\begin{equation}
+		\int_{0}^{n} Proj(\bar{q}),
+	\end{equation}
+	
+	giving us the equation
+	
+	\begin{equation}
+		\int_{0}^{n} Proj(\bar{q}) \star \Lambda_\emptyset = \mathcal{C(\kappa-\epsilon)}
+	\end{equation}
+
+	where $\mathcal{C(\ast)} \asymp \ast$ gives the cardinality of a hypercategory, and where
+	
+	\begin{dn}
+		a hypercategory, $\mathcal{H}$ is an arbitrary generalization of a stable $\infty$-category, h, to a boundless, quasi-Platonic regime, $\mathcal{U}^\infty.$
+	\end{dn}
+	
+	It is rather ironic that, in receding to this space of apparent boundlessness, one is compelled to abandon a host of effective actions so as to minimize the impressions of the unconscious on the superego. In a sense, this provides a closure:
+	
+	\begin{equation}
+		\bar{\mathcal{M}}_{id}
+	\end{equation}
+	
+	of one's Koszul-Markov blanket, where
+	
+	\begin{dn}
+		A Koszul-Markov blanket is defined as the depth-boundary for a two-sided sheet, parameterized by:
+		
+		a. a transcendental infinitessimal, $\epsilon$
+		
+	$$ and $$
+		
+		b. a Koszul connection for every volume $\epsilon$ of a sheet $\mathcal{S}$
+	\end{dn}
+	
+	Judging by the abstractness of the above definition, it is reasonable to deduce that a Koszul-Markov blanket is a precarious doorway of id(x). This displays, by transitivity, the precariousness of invariance, and any object x which is considered to be ``invariant." 
+	
+	The specific object, x, is what Mikhail Bakhtin would refer to as a ``chronotope." A chronotope is a contextual entity that serves as a primary unit of archetypal analysis; i.e., it is that which brings the abstract into concrescence, and the concrete into abstraction. This is the little t ``tao" that may be named.
+	
+	\section{Dreams, as they relate to facts}
+	
+	Let $\tau(s)$ be a fuzzy truth value assigned to some statement s, in the interval $(0\sim\emptyset,1]$. The infimum of the interval is open, as a statement must possess a minimal degree of concordance with a regime $\mathfrak{R}$ in order to bear significance$^2$ to some faction 
+	$$\mathfrak{F}\colonapprox\Sigma_i(f_j)$$
+	
+	\footnotetext[2]{To signify; to be semiotically appreciable}
+	
+	\begin{dn}
+		A faction, $\mathfrak{F},$ is a collection of facts equipped with a tautological bundle over each said fact that makes $(\mathfrak{F} \coloneq \Sigma_i f_j)$ an equivalence under a typing judgment $\mathfrak{t_j}$.
+	\end{dn}
+	
+	\begin{dn}
+		A fact, f, is a known or unkown state with a relatively high truth value $\tau_j(f)$.
+	\end{dn}
+	
+	\begin{rk}
+		The definition of a fact is not so illuminating without first defining an actor.
+	\end{rk}
+	
+	\begin{dn}
+		An actor, $\dot{\alpha}$, is any object whose identity is obtained as a composition of expressive actions and impressive reflections.
+	\end{dn}
+	
+	\begin{rk}
+		The above definitions are merely syntactic sugar. An actor exists as a time-evolving collection of facts and internal-external symmetries distributed across a bound worldvolume. Facts are the currency employed by actors to shift the type of a simplex. Recasting definition 7, a faction is a collection of facts (some of which are actors), along with a tautological line bundle and an arbitrarily defined operator for twisting.
+	\end{rk}
+	
+	\begin{dn}
+		An agent, $\dot{\alpha}^\dagger$, is an actor $\dot{\alpha}$ equipped with a Hermitian adjoint, $\nabla_\mathbb{R}$ which realizes the reflective subtypes of $A \supseteq \dot{\alpha}$
+	\end{dn}
+	
+	\subsection{Construction of factions}
+	The construction of a faction begins with a single typeme: $\neg$, and develops into a dipole through the closure of a ``tie." The tie is a binary relationship which constitutes the lone edge in a simple graph with two vertices. The most generic form of a tie is:
+	
+	\begin{equation}
+		\ast \leftrightarrow \ast
+	\end{equation}
+	
+	Substituting R for the bijection, and $\neg$ for each $\ast$, we obtain
+	
+	\begin{equation}
+		\neg \leftrightarrow \neg
+	\end{equation}
+	
+	Now, given a choice of $\emph{privilege}$, that is to say, given a choice of signed chirality, each of the negations will develop a unique logical priority. So, if our privilege is L, then the left-hand side of the tie will develop as a $\emph{self}$, and the right-hand will develope as an $\emph{other}$, and vice versa.
+	
+	Essentially, there are three kinds of simple relationships, or ties:
+	
+	a. $\mathfrak{s}R\mathfrak{s}$
+	
+	b. $\mathfrak{s}R\mathfrak{o}$
+	
+	c. $\mathfrak{o}R\mathfrak{s}$
+	
+	A type (a.) relationship reduces to the generic tie, and so represents the empty tie, and (b.) and (c.) stand in opposition to one another. From the L-privileged perspective, (b.) represents the type of relationship where one's internal psychological state (i.e., the repressed, the personal unconscious, etc.) is identified as the self, and the ``outside world" is cast as altern, or othered, queered, etc. Conversely, (c.) represents the circumstance that one's repressed, ``underground" psychic underpinnings are alien, and the material, causal world is identified with.
+	
+	This stands as the basis for the fundamental fact of polarity:
+	
+	\begin{equation}
+		f_\leftrightarrow
+	\end{equation}
+	 
+		
+	All substances, whether pure and fantastical, or diluted and actual, obey the fundamental fact of polarity. However, its truth value is undefined, as it penetrates the universe so thoroughly that there is no recession to which it does not permeate, and so there exists no independent observer capable of bringing such fact into a stable faction as a changing and time-evolving fact. So, we have:
+	\begin{equation}
+		\tau(f_\leftrightarrow) = ?
+	\end{equation}
+	
+	The currency of all species is wholly synthesized from this marvelous paradox. Stasis and flux, and all that is complimentary, polar, opposed, in harmony, etc., are derived from this great question, which is identifiable only as its equation with its own altern representation as a a fundamental fact.
+	
+	\begin{equation}
+		(\tau(f_\leftrightarrow) = ?) \models_\dashv \widehat{\Psi}
+	\end{equation}
+	
+	We see, rather nakedly, that the essence of factions, whatever they may be, is in miniature (or in large print) made of much of the same cloth as the relationship that a single actor bears between its waking and sleeping states. 
+	
+	Much of the time, a particular frame of reference, or ``fact-in-context," remains $\emph{locked}$ behind a series of doorways, for which the proper keys are required to traverse. It happens that, for the agent, this key is the literal $\emph{id}$. This key is distributed across various chronotopes. Without the agency to direct mental or computational currency, these chronotopes will remain $\emph{secret}$. In this way, the act of revelation (of affective tendencies) is (effectively) an act of forcing. The evolution of the id is an act, not only of natural selection, but of revelation selection, which is subject to various pressures and motives.
+	
+	Selection is, semantically, very rich, as it is synonymous with $\emph{choosing}$, and therefore choice, and so some idea of temperature and orientation (as in $\emph{degrees}$) of freedom emerges. Thus, if it is the case that $\dot{\alpha}_{id}^\dagger$ will do something at time x, then at time x it is revealed that the agent willed so freely and with some degree of autonomy.
+	
+	\begin{dn}
+		Autonomy is the ability to freely purchase a discharge of potential at some time x using one's cognitive currency; i.e., the ability to determine one's pressures at time x given a set of facts.
+	\end{dn}
+	
+	Of course, an agent must automatically possess the ability to project type judgments if one is to take any effective action, within the rules and boundaries of a particular faction or regime.
+	
+	\subsection{Factions, in the dream}
+	Write
+	\begin{equation}
+		(\Omega_{\Sigma(\tau:\mathfrak{F})} \; \widehat{a}(\dot{\alpha}_{id}^{\dagger})) = \mathfrak{D}
+	\end{equation}
+	to mean that that the truth values associated with some (presumably complete) faction are suspended by an individual. 
+		
+	This equation, more or less, epitomizes the dream state. Thus, if the logical structure (as can be approximated by correspondences of truth) of a scene is found to be ``suspended" (appropriately defined on the basis of context), relative to some baseline model of reality, then the $\alpha$-state of the particular agent is said to be dream-like.
+	
+	\subsubsection{Condensation of the psyche}
+	Let $Coh(\bar{Q})$ be an allegedly coherent faction, and let
+	
+	\begin{equation}
+		Coh(\bar{Q}) = \underbrace{f_0 \star f_1 \star f_2 \star ... \star f_\aleph}_{\aleph-k \text{ times}}
+	\end{equation}
+	
+	hold at $\tau \eqcirc 1$. Then,
+	
+	\begin{dn}
+		Condensation is the map Coh($\bar{Q}$) $\mapsto$ $f_n$, for n a real number.
+	\end{dn}
+	
+	During the dream state, reality enters the world of the merely symbolic. Thus, quite literally interpreted, 
+	
+	\begin{equation}
+		\mathfrak{D}(Coh(\bar{Q})) = \mathfrak{D}
+	\end{equation}
+	
+	the dream is self-symbolizing and self-referential. So, then $\mathfrak{D}$ is categorically representative of multiplicity; in fact,
+	
+	\begin{equation}
+		Coh(\bar{Q})\setminus\mathfrak{D}
+	\end{equation}
+	
+	stands as the symbolized universe, and every $f_n \neq d \in \mathfrak{D}$ is coarsened through this outcome of the litmus test. So, the freest of our willing actions, which bear the highest number of degrees, are quenched, and thus brought into a compression during the sleep phase. The self-contained solidity of this illogical regime creates $\emph{inspiration}$, which is a precursor to causality.
+	
+	Causality, as a concept, only applies to the waking world. The dream state knows only inspiration, correlation, synchronicity and such. So, there is a sort of ``phase transformation" of consciousness being undergone; the waking agent radiates away this inspiration in the form of volition, freedom, willfulness, and intentions, after being arrested by sleep and charged with dreams.
+\end{document}
