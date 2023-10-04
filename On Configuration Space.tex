@@ -1,0 +1,494 @@
+\documentclass{article}
+
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{quiver}
+\usepackage{mathrsfs}
+\usepackage{braket}
+
+\title{On Configuration Space}
+\author{Ryan J. Buchanan}
+\date{September 23, 2023}
+
+\newtheorem{dn}{Definition}
+\newtheorem{as}{Assumption}
+\newtheorem{rk}{Remark}
+\newtheorem{eg}{Example}
+\newtheorem{pp}{Proposition}
+\newtheorem{ax}{Axiom}
+\newtheorem{tm}{Theorem}
+
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+		\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+		#1 % the function
+		\littletaller % pretend it's a little taller at normal size
+		\right|_{#2} % this is the delimiter
+}}
+
+\newcommand{\littletaller}{\mathchoice{\vphantom{\big|}}{}{}{}}
+
+\begin{document}
+	\maketitle
+	
+	\tableofcontents
+	
+	\begin{abstract}
+		A particular class of real manifolds (Hermitian spaces) naturally model smooth, possibly complex n-spaces. We show how to realize such a space as a restriction of a super-smooth stack using a compass. We also discuss the classical relationship between iterated loop spaces and the configuration space of a particle.
+	\end{abstract}
+	
+	\section{Background}
+	\subsection{Overview}
+	We will trace our lineage back to, approximately, the early 1970s with works of Segal, which centered around the applications of fiber bundles to quantum field theory, and McDuff, and to even earlier mathematical foundations in Boardman and Vogt, in the 1960s. Chapter one gives some preliminaries on tangent vector fields on smooth manifolds, and restrictions to the discrete case. Chapter two describes the configuration space of McDuff, with some criteria for tensorability. We also describe the E-spaces of Boardman and Vogt.
+	
+	The mathematical and physical interpretations of configuration spaces differ somewhat, and this is in part an attempt to reconcile these viewpoints. Configuration spaces were discussed in [15] in relationship to $\emph{cross sections}$. This was largely a mathematical treatise, although one may plausibly envision a compatible physicalist interpretation. 
+	
+	We employ relatively simple methods here, i.e., we do not grapple with knot theory or Gromov-Witten theory, but instead tackle $\emph{symmetric products}$ of foliations on manifolds.
+	
+	In the appendix we cover topics such as the categorification of the Taylor expansion.
+	
+	
+	\subsection{Imposing Discreteness on Smooth Spaces}
+	Let $\mathcal{C}_n^\infty$ be a smooth manifold of dimension d, possibly with corners, with or without boundary. One can restrict to a submanifold of the same dimension\footnote{In doing so, one obtains a boundary, $\partial C_n^{fin} \subset int(C_n^\infty)$}:
+	
+	$$C_n^\infty \twoheadrightarrow C_n^{fin}$$
+	
+	so that the tangent vectors
+	
+	\begin{equation}
+		\tan_{vec}(x) = (\tilde{v} \otimes \tilde{h})(x)
+	\end{equation}
+	
+	 
+	
+	about the point x yield the following compass\footnote{See [2] for a brief introduction to compasses}:
+	
+	$$\Omega_x^{k\sim \infty} = Comp_p$$
+	
+	giving us x as the inf-pole and some discretized point k corresponding to a point ``at infinity." McDuff [1] used this discretization to model the creation and annihilation of antiparticle pairs, where 
+	
+	$$\underset{\to}{lim}\;p = sup(Comp_p) \; ; \; \; \underset{\leftarrow}{lim} = inf(Comp_p)$$
+	
+	Here, we choose to let k be any generic cardinal invariant within the compactly generated (presentable), smooth category $SmFld$ of smooth fields. We have 
+	
+	$$(\underset{n \to \infty}{lim \; n}) \twoheadrightarrow k $$
+	
+	which ``realizes" the smooth motion of a quasi-quantum as a particle in a Hermitian manifold
+	
+	$$\mathbb{R}^4 \simeq {\mathbb{C}^\infty}^\dagger $$
+	
+	In [3], it was shown that if a boundary existed for $\mathcal{C}_n^\infty$, then it was unrealizable as a pullback locally within $\mathbb{R}^4$. We generalize this here to $\mathbb{R}^d$ for any dimension.
+	
+	\subsection{Tangent vectors}
+	
+	\begin{ax}
+			Let (eq. 1) be valid for any point $p \in C_n^{fin}$. Then, we say p obeys the ``tangent space axiom."
+	\end{ax}
+
+	\begin{pp}
+		If p obeys the tangent space axiom, then $Comp_p$ is stable.
+	\end{pp}
+	
+	$\mathbf{Proof}$: Since there exists a neighborhood $\mathcal{U}(p)$ of p, and since the space is assumed to be Hausdorff, then there exists both a right and left limit of the directional derivative taken at p, lying inside $\mathcal{U}(p)$
+	
+	$$\forall p \in \text{ spaces obeying Axiom 1}\; \exists\;\underset{\leftrightarrow}{lim \; \vec{p}} \in \mathcal{U}(p)$$
+	
+	\subsubsection{Subcategories of $\square$}
+	We denote the class of spaces obeying (Axiom 1) by $\widehat{\square}$, and let it be a full subcategory of $\square$ (see [3] for more information). Objects of $\widehat{\square}$ are spaces and morphisms are diffeotopies. 
+	
+	We can extend $\widehat{\square}$ by taking its union with the class of pure potentials, $\widehat{\square}\cap Pur$, and denote this by $\widehat{\square}_{Ext}$. Since $Pur$ is a smooth category [4], $\widehat{\square}_{Ext}$ is also smooth (as can be easily demonstrated by the axiom of extension [5]). We then have the map
+	
+	$$\mathcal{A} \in \widehat{\square} \xrightarrow{Mor} \mathcal{A}' \in \widehat{\square}_{Ext}$$
+	
+	giving us a Morita equivalence between the underlying algebras of $\widehat{\square}$ and its extension.\footnote{See [6] for more information.} 
+	
+	The class of subcategories of $\square$ is given by two pieces of data:
+	
+	\begin{enumerate}
+		\item{A full subcategory $\widehat{\square}$ of $\square$}
+		\item{An extension $\widehat{\square}_{Ext}$ of $\widehat{\square}$ into the union with $Pur$}
+	\end{enumerate}
+	
+		Which correspond to the set $\square(\mathcal{A},\mathcal{A}')=\square_\mathcal{A}$.\footnote{See [7, sect. 2b]} We can show that this set is actually a poset by imposing an arbitrary relationship $\mathcal{R}$ on $\square_\mathcal{A}$ such that the generalized cocycle condition holds. That is to say, for a partial flag variety:
+		
+		$$\widehat{\square} \simeq \mathcal{A} \subset \widehat{\square}_{Ext} \simeq \mathcal{A}' \subset \widehat{\square}_{Ext_{Ext}} \simeq \mathcal{A}''$$
+		
+		we obtain the transitive relationship $\mathcal{A}\mathcal{R}\mathcal{A}'\mathcal{R}\mathcal{A}''$, which corresponds to the extension of the Morita equivalence class $\mathcal{A}/Mor$ of the algebra $\mathcal{A}$ to encompass boundaries beyond the limit k of a generic sequence of operators acting on geometric realization of the algebra.
+		
+		\begin{eg}
+			Let $\mathbb{C}$ be a complex space and $\mathcal{A}$ its underlying algebra. The Riemann sphere, $\mathbb{C}\cup\{\infty\}$ extends the algebra of this space to a new algebra $\mathcal{A}'$.
+		\end{eg}
+	
+	According to [6]\footnote{The notation used by Segal differed from ours. Very elegantly, he wrote $\mathcal{O}_x \; = \; \underset{\leftarrow}{lim} \; \mathcal{H}\partial D$. 
+		
+		The vacuum expectation value, $\Theta_k$, is taken by tensoring over all $\mathcal{O}_{x_k}$}., in order for our theory to be quantum, we must allow for tensoring of manifolds:
+	
+	\begin{equation}
+	\mathbb{M}_\mathcal{A} \otimes \mathbb{M}_{\mathcal{A}'} \xrightarrow{\simeq} \mathbb{M}_{\mathcal{A} \sqcup \mathcal{A}'}
+	\end{equation}
+	
+	\begin{equation}
+			\mathcal{U}(p) \otimes \mathcal{U}(p') \xrightarrow{\simeq} \mathcal{U}(p\amalg p')
+	\end{equation}
+	
+	\section{Configuration space}
+	Here we will discuss the configuration space of McDuff. 
+	
+	Let $E_M$ be a bundle over a manifold M; McDuff showed that the homotopy type of the bundle is equivalent to the homotopy type of a configuration space $\tilde{C}^\pm$ of some set of particles $\mathcal{P}^\pm$ which may have a positive or negative charge. In his model, all particles had pairwise separation $\geq2\varepsilon$, and only particles of the same parameters could annihilate one another. McDuff proved this fact by invoking quasifibrations on a disc centered about some particle $p$.
+	
+Here, we add the following ingredient: every particle $p^\pm$ has an associated truth value $\tau(p^\pm)$ in the structure sheaf $\mathcal{O}_X$ of the particle. The bijection 
+
+$$\tau(p^\pm) \leftrightarrow \dot{a}(p)$$
+
+corresponds to a referential instantiation by an agent at a particular modal frame, corresponding physically to either the existence or non-existence of the partical in a position at a time t=0. That position is determined by the variable $\theta$, which determines the anisotropy between the absolute frame generated by $\mathbb{T}\sqsupset\mathcal{O}_X$. This is called a ``state," and is given by a bijective map of algebras $\mathbb{T}_\mathcal{A} \xleftrightarrow{MorExt} \mathcal{O}_{X_\mathcal{A'}}$.
+
+We can more succinctly summarize the results of McDuff's wonderful treatment of configuration spaces if we introduce a canonical fiber bundle, $\Gamma_\Delta$, over $\mathcal{O}_\mathcal{A}$ by letting each $\delta_i$-small neighborhood about p take its fibers in $\Gamma_\Delta$. In this way, we derive the structure sheaf of the particle by
+
+$$\mathcal{O}_X = Hom(\mathcal{O}_A, fib(\mathcal{O}_A)) \simeq \Gamma_\Delta$$
+
+\subsection{Symmetric Product}
+Let $\overset{m}{\otimes}$ be the m-fold symmetric product. For every neighborhood $\mathcal{U}(p^\pm)$, we having an incoming connection, $in_{\Gamma_\Delta}$, and an outbound connection $out_{\Gamma_\Delta}$. 
+
+\begin{ax}[Looping]
+	Given a collection of neighborhoods $\sum_{i=0}^{n}{\mathcal{U}_i(p^\pm)}$, the m-fold symmetric product of incoming connection yields an outbound connection about a fixed point. Formally:
+	
+	\begin{equation}
+		in_{\Gamma_\Delta}(\mathcal{U}_i(p^\pm) \overset{m}{\otimes} \mathcal{U}_i(p^\pm)) = out_{\Gamma_\Delta}(\ast)
+	\end{equation}
+\end{ax}
+
+This gives us a fairly nice agreement with the vision of Boardman and Vogt of configuration spaces as iterated loop spaces. See, for instance, [7] and [8]. We obtain the following exact sequence:
+
+$$\Gamma_\Delta: in_{\Gamma_\Delta} \to in_{\Gamma_\Delta} \to ... \to out_{\Gamma_\Delta};$$
+
+the sequence is long whence the symmetric product is taken about a smooth space, and short whence this space is discrete. We make the identification $$Ho(\mathcal{U}_i(p^\pm)) = Ho(\mathbb{R}^n)$$ by letting the l.h.s. be equal to $\mathcal{P}$, and letting the r.h.s. be equal to $\tilde{C}^\pm$. 
+
+\subsection{Superposition}
+We denote the superposition of all the particles in $\mathcal{P}$ by $\Psi_\mathcal{P}(\heartsuit)$. This notation is due to O. Hancock, and is a very succinct representation of the ``pure space" over a particle. Always, when such a superposition is considered, it is either over $Pur$, or over $\widehat{\square}_{Ext}$. That is to say:
+
+$$\Psi_\mathcal{P}(\heartsuit) \sim Pur \sqcap \vec{p}^\pm$$
+
+In some sense, the wordline of a particle may be considered as a classical analogue of the structure sheaf $\mathcal{O}_{Pur}$ of the particle over a probabilistic space. For technical reasons, we let the probability space be metrizable, and denote its metric by $\mu$.
+
+The realization of a quantum is denoted by:
+
+$$\hat{q} \star_\mu \mathcal{O}_{Pur} \longrightarrow q \; ; \;\; q \in \mathbb{R}^n$$
+
+Or as a $\emph{closure}$:
+
+$$(\overline{\hat{q},\hat{q'}}) \; ; \; \; \hat{q}\not{\mathcal{R}}\hat{q'}$$
+
+Zanthius\footnote{Real name unknown; private conversation} proposed that something similar to a quasi-quantum ($\hat{q}$) may exist as a sort of ``strange attractor," where high probabilities of attraction converge (presumably asymptotically) to the instantiation of gravitational effects. This elegantly seems to unify the principles of relativity with quantum effects in a phenomenologically consistent manner.
+
+	However, one seems to be missing something from this theory. Namely, the underlying topological stack on which quantum gravitational phenomena emerge is left anonymous. Here, we propose that $\mathbb{R}^n$ be a sufficient general manifold for realizing this stack. We must include the following caveat - the realization of the $\emph{stack}$ $\mathscr{A}$ is not an ordinary (concrete) realization, but a $\emph{projective realization}$ onto the topology in which quanta actually emerge.
+	
+	\subsubsection{Quasi-quanta}
+	Quasi-quanta were first invoked by P. Emmerson in [9] and were expanded upon in [3]. To provide a brief summary, a quasi-quantum, $\hat{q}$, has an a-priori existence which is not yet tied to an existential quantification. The type-dependent inclusion, $\in^\bullet$, in a subclass of $Man$ gives us an existential quantification
+	
+	$${\exists^\bullet} p^\pm \in Man$$
+	
+	where Man is the category of manifolds. We restrict to the category of real manifolds in the case where an n-tuple of quasi-quanta is realized as a physical quantum. The realization of quasi-quanta is given by a basepoint preserving homomorphism $S^n \times Simpl \longrightarrow S^n$, which preserves the endpoints of a pre-determined interval. This interval is given by
+	
+	$$(-\infty, 0] \times [0, \infty) \longrightarrow (-\infty,0,\infty)$$
+	
+	In our case\footnote{c.f. [10]}, and in Segal's case, a specialization $\infty \rightsquigarrow k$ can be made to a discrete cardinal k. This assignment of an infinitary ideal to a discrete cardinal approximates a certain locally constant section of the smooth manifold $\mathcal{C}_n^\infty$ at a place. This will be referred to as the $\emph{truncation}$ of $\mathcal{C}_n^\infty$ with respect to a metric $\mu$. 
+	
+	I shall argue that truncation acts effectively as a form of quantization to instantiate action, as projected by the absolute frame $\mathscr{A}$ to the real manifold $\mathbb{R}^n$. This is $\emph{Emmerson's thesis on quasi-quanta}$. 
+	
+	This thesis is essentially metaphysical, as it takes some objects (i.e., the ``energy numbers") to be a-priori to others, such as the reals. The real numbers are obtained by the restriction $\restr{\mathbb{E}}{\infty \to k}$. We obtain not just one map, $\mathbb{E} \longrightarrow \mathbb{R}$, but a whole slough, via $\hom(\mathbb{E},\mathbb{R})$. In this way, it makes sense to define a sort of generalized connection between the two, and even more abstractly, a generalized connection $\Gamma_{Ext}$ between a ring and its overring. In order to define such a construction, we assign an index set $\mathcal{I}$ to each ring under the operation $\star$. We then have
+	
+	$$\mathcal{I}_\star(\mathcal{R}_{ng}): \mathcal{R}_{ng} \longrightarrow \restr{\mathcal{R}_{ng}}{\tau \in \mathcal{O}_X}$$
+	
+	giving us the faction-level correspondence between the elements of the ring and their localized (refracted) truth values. This corresponds to the canonical $\emph{operator product expansion}$:
+		
+		$$A(x)B(y) = \underset{i}{\Sigma}c_i(x-y)C_i(y)$$
+		
+		where y is a point, A and B are operator-valued fields, $C_i$ are operator-valued fields, and $c_i$ are analytic functions over $O\setminus\{y\}$. The sums are convergent in the operator topology within $O\setminus\{y\}$.
+		
+		\begin{eg}
+			Let $Strat_\mathcal{M}$ be a stratified manifold, and let $\mathcal{EP}: y \longrightarrow \xi$ be an exit path. Then, we have the equivalence 
+			
+			$$A(x)B(y) \sim G(y,\xi)$$
+			
+			if x=y.
+		\end{eg}
+		
+		\subsubsection{Exit Paths}
+		The projection $Pur \times Man \longrightarrow \mathbb{M}$ gives rise to a stratification, $\gamma$ over some object of $ManH$. The morphisms in this category correspond to sections of holonomy fibers, and they are the fundamental units (currency) of the kinetic action of observables in the vector space over $ManH$. This formalism may be written as
+		
+		$$\mathcal{EP}:(Pur \times Man)_\gamma \longrightarrow Strat_M$$
+		
+		The micro-coordinates of $\hat{q}$ are picked out (selected) by $\gamma$, and the selection equation
+		
+		$$\mathcal{S} = \theta\exp(\pi_0(\gamma))$$
+		
+		holds across all locally constant sections of the sheaf of torsors over $Strat_M$.
+		
+		\subsection{E-spaces}
+		We kindly refer the reader to [7, theorem A] for the masterful articulation of Boardman and Vogt. Stated verbatim,
+		
+		$\mathbf{Theorem \; A}$. A CW-complex X admits an E-space structure with $\pi_0(X)$ a group if and only if it is an infinite loop space. Every E-space X has a `'classifying space" BX, which is again an E-space.
+		
+		\begin{dn}
+			A ``homotopy-everything H space" (E-space) is an H-space in which all coherence conditions hold.
+		\end{dn}
+		
+		An E-space $\mathcal{E}$ has quotient uniformity for Y relative to a functor f, which has been denoted by Himmelberg [12] as $\mathfrak{f}(\mathfrak{U})$, where
+		
+		$$\mathfrak{f} = X \times X \to Y \times Y$$
+		
+		For suitably chosen bases, we have the homotopy groups $\pi_0(X)$ and $\pi_0(Y)$, and also $\hom(X,Y)$. In an E-space, this hom-set commutes under the group operation. A remark made at the end of the paper introducing quotient uniformities suggested that, for distinct timelike equivalent particles $(p \sim p')/\in^\mathbb{R},$ there ought to be a distinct neighborhoods
+		$$(\mathcal{U}(p) \setminus p') {\nsim} (\mathcal{U}(p') \setminus p)$$
+		
+		This implies that for sufficiently small tangent vectors $(tan_{vec}(p,p')) << 1$, there exists a connection $$(p,p')\xrightarrow{\Gamma_\Delta}\mathcal{U}(p,p'),$$ and a larger neighborhood 
+		$$\underset{i}{\Sigma} \; \mathcal{U}_i(p,p') = \overset{i}{\cap}\;p_i\sim (p,p')\in^\mathbb{R}\mathbb{M}^n$$
+		
+		which covers both of the two. The localization procedure represents finding the real part of a complex equation, but goes much further, in that it can express the similar behavior of overrings in general to extend their algebraic parts via the inclusion of some transcendental element, which forces the new members of the overring. These members are bijective onto some set of numbers, which can, in principle, be arbitrarily extended to inordinately large sizes.
+		
+		The choice of E-spaces as models of configuration spaces were described beautifully as early as 1973.
+		
+		\begin{dn}
+			The configuration space of $n$ points in a topological space $X$ is\footnote{Verbatim, [14]}
+			
+			$$Conf_n(X)\coloneq X^n -{(x_1,...,x_n) \in X^n | x_i = x_j \text{ for some } i\neq j}$$
+		\end{dn}
+		
+		\begin{eg}
+			$Conf_2(\mathbb{R}^2) \simeq \mathbb{R}^3 \times S^1$
+		\end{eg}
+		
+		
+		
+		\pagebreak
+		
+		\section{Appendix A}
+		
+		\subsection{Super-smoothness}
+		Super-smoothness generalizes a variety of physical phenomena, such as superfluids, supersolids, and superconductivity. These processes all arise naturally by letting   $\underset{n\to\infty}{\partial^n} = k$. One must imagine that a countable cardinal asymptotically approximates an uncountable one as it is forced and extended towards infinity. This is in line with the gravitational effects of a rigid body: decreasing the distance function between two objects, thus increasing their velocity, under the condition that they never physically contact unless they are of the same nature but opposite sign (charge).
+		
+		Thus, 
+		
+		$$\underset{\longleftarrow}{lim}\; \mathcal{I} \in \mathcal{C}_n^\infty = k(\hbar) = \tau(x)$$
+		
+		gives us the generalized force-field equation, where x is a product of orthogonal vectors on a formally framed manifold.
+		\subsubsection{Projections from the structure sheaf}
+		
+		\begin{ax}
+		$$Cov(\hat{q}_i) = \overset{i}{\cap}p_i \; \text{iff} \; p_i = \hat{q}_i$$ 
+		\end{ax}
+		
+		This gives us:
+		
+		$$\mu(p_i) \overset{\star}{=} \mu(\hat{q}_i)$$
+		
+		so the metrics (stalks of $\mathcal{O}_{\mu(\dot{x})})$ agree at a locally constant point $\dot{x} = xyz$ on a real manifold. The map $\mathcal{O}_\mu(\dot{x}) \xrightarrow{\mathcal{I}} |x|$ is monic. [13, Lemma 2.14]
+		
+		This implies the existence of a universal filter on $\mathscr{A}$ with an open bijection onto Sets, such that for every element $x\in Sets$, there is a class $x/\sim_F=(\dot{x},|x|)$. This means that, for classes of broadly different cardinalities, there are certain faithful extensions, which are adjoint to their dual filters, which biject onto the ground set.
+		
+		The energy numbers [11] have a non-physical presentation, and a physical representation. This is represented by the bridge $\mathbb{E}\xleftrightarrow{\theta}\mathbb{R}$. This bridge is vaguely physical, in that it mediates between quasi-quanta and actual quanta. As a result, it represents orientation-dependent anisotropy between possible and necessary modal frames. 
+		
+		$$\Psi(\heartsuit) = hom(\mathbb{E}_\theta,\mathbb{R}_\theta)$$
+		
+		\subsubsection{Good enough to do algebra}
+		Borrowing from [16], we note that there are specific subrings of $\mathbb{E}$ and $\mathbb{R}$ which are ``good enough to do algebra," or in other words are ``almost algebraic." This means the following diagram, where the squiggly arrow represents specialization to a point-like spatial location, is commutative:
+		
+		% https://q.uiver.app/#q=WzAsNCxbMCwyLCJ4Il0sWzAsMCwiXFxtYXRoYmJ7RX0iXSxbMiwyLCJcXG1hdGhiYntSfSJdLFsyLDAsIlxcbWF0aHNjcntBfSJdLFswLDJdLFswLDFdLFsxLDNdLFsyLDNdLFszLDAsIiIsMSx7InN0eWxlIjp7ImJvZHkiOnsibmFtZSI6InNxdWlnZ2x5In19fV1d
+		\[\begin{tikzcd}
+			{\mathbb{E}} && {\mathscr{A}} \\
+			\\
+			x && {\mathbb{R}}
+			\arrow[from=3-1, to=3-3]
+			\arrow[from=3-1, to=1-1]
+			\arrow[from=1-1, to=1-3]
+			\arrow[from=3-3, to=1-3]
+			\arrow[squiggly, from=1-3, to=3-1]
+		\end{tikzcd}\]
+		
+		\begin{rk}
+			This diagram represents retrocausality, when the map $A \rightsquigarrow x$ is taken to be a map from $t=0 \to t<0$. Thus, in order to preserve causal order, we impose:
+			
+			\begin{ax}
+				x occurs at time t=0
+			\end{ax}
+			
+			which forces x to be contained within $\square:e \times e \xrightarrow{\theta} p^\pm$.
+		\end{rk}
+		
+		% https://q.uiver.app/#q=WzAsNCxbMCwwLCJlXFx0aW1lcyBlIl0sWzAsMiwiZSJdLFsyLDAsImUiXSxbMiwyLCJwXlxccG0iXSxbMSwwXSxbMiwwXSxbMCwzLCJcXHRoZXRhIiwyXV0=
+		\[\begin{tikzcd}
+			{e\times e} && e \\
+			\\
+			e && {p^\pm}
+			\arrow[from=3-1, to=1-1]
+			\arrow[from=1-3, to=1-1]
+			\arrow["\theta"', from=1-1, to=3-3]
+		\end{tikzcd}\]
+		
+		Here, $e \times e$ is the main diagonal of an entourage, which is covariant with respect to the tangent momentum about $p^\pm$. The above diagram is a corner of a spacetime cuboid, which forms an exit path $\square^{\sqrt{2}}e \longrightarrow p^\pm$. Such an image may be used to model quantum thermodynamics. [17]
+		
+		The mathematical form of the ``exit path" corresponds to a physical change in a thermal reservoir in which the catalyst is preserved. Here, $\theta$ denotes a cross-section of the main diagonal of the chosen entourage. Some restrictions of the Swampland conjectures model this bridge as a diffeomorphism of baby universes, which are a special case of bordism. The below diagram gives the unfolding of a cross section into its mutually orthogonal components:
+		
+		% https://q.uiver.app/#q=WzAsNCxbMCwwLCJlIl0sWzIsMCwiZVxcdGltZXMgZSJdLFs0LDAsImUiXSxbMiwxLCJwXlxccG0iXSxbMSwwLCJmXnstMX0iXSxbMSwyLCJnXnstMX0iLDJdLFsxLDMsIlxcdGhldGFeey0xfSIsMix7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9LCJoZWFkIjp7Im5hbWUiOiJub25lIn19fV1d
+		\[\begin{tikzcd}
+			e && {e\times e} && e \\
+			&& {p^\pm}
+			\arrow["{f^{-1}}", from=1-3, to=1-1]
+			\arrow["{g^{-1}}"', from=1-3, to=1-5]
+			\arrow["{\theta^{-1}}"', tail reversed, no head, from=1-3, to=2-3]
+		\end{tikzcd}\]
+		
+		By [4], there corresponds a path groupoid $(e \times e)^{<1>}$ over the main diagonal which exists in the space of paths over the underlying manifold $\mathcal{M}$.
+		
+		We have the Morita equivalence $e_\mathcal{A} \xleftrightarrow{Mor} e_\mathcal{A}$ by applying $(f\circ f^-1)\lor(g \circ g^-1)$, which gives us a map $\theta^{-1} \lor \theta \to p^\pm$. All of this goes to show that the above diagram is contractible to $e \times e.$
+		
+		\subsection{The Path Groupoid Construction}
+		For a manifold $\mathcal{M}=[0,1]$, we have $\mathcal{M}^{<n>}$ denoting the space of smooth n-dimensional paths over $\mathcal{M}$.
+		
+		\begin{eg}
+			$\mathcal{M}^{<1>}$ yields the class of first-order differentials over $\mathcal{M}$.
+		\end{eg}
+		
+		Strictly speaking, it was showin in [4] that it is sometimes easier to treat problems arising over a manifold as if they were objects in the path groupoid over said manifold.
+		
+		% https://q.uiver.app/#q=WzAsNixbMCwwLCJcXG1hdGhjYWx7TX1fe2lpfSJdLFswLDEsIjEiXSxbMiwwLCJcXG1hdGhjYWx7TX1fe2lqfSJdLFsyLDEsIjEiXSxbNCwwLCJcXG1hdGhjYWx7TX1fe2pqfSJdLFs0LDEsIjEiXSxbMCwxLCI8PiJdLFsxLDMsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFswLDJdLFszLDUsIiIsMCx7InN0eWxlIjp7InRhaWwiOnsibmFtZSI6ImFycm93aGVhZCJ9fX1dLFsyLDRdLFs0LDUsIjw+IiwyXSxbMiwzLCI8PiIsMV1d
+		\[\begin{tikzcd}
+			{\mathcal{M}_{ii}} && {\mathcal{M}_{ij}} && {\mathcal{M}_{jj}} \\
+			1 && 1 && 1
+			\arrow["{<>}", from=1-1, to=2-1]
+			\arrow[tail reversed, from=2-1, to=2-3]
+			\arrow[from=1-1, to=1-3]
+			\arrow[tail reversed, from=2-3, to=2-5]
+			\arrow[from=1-3, to=1-5]
+			\arrow["{<>}"', from=1-5, to=2-5]
+			\arrow["{<>}"{description}, from=1-3, to=2-3]
+		\end{tikzcd}\]
+		
+		When the matrices represented by i and j are sent to 1-objects (0-cells, 0-manifolds), they become commutative and associative, and so any technique for transforming these matrices into number-objects represents a tactic for constructing $E$-spaces.
+		
+		% https://q.uiver.app/#q=WzAsNSxbMSwxLCJcXE9tZWdhX2leaiJdLFsyLDAsImoiXSxbMiwyLCJpIl0sWzIsMSwiXFx7aSxqXFx9Il0sWzAsMSwiXFxvbWVnYV9rIl0sWzAsMV0sWzAsM10sWzAsMl0sWzQsMF1d
+		\[\begin{tikzcd}
+			&& j \\
+			{\omega_k} & {\Omega_i^j} & {\{i,j\}} \\
+			&& i
+			\arrow[from=2-2, to=1-3]
+			\arrow[from=2-2, to=2-3]
+			\arrow[from=2-2, to=3-3]
+			\arrow[from=2-1, to=2-2]
+		\end{tikzcd}\]
+		
+		This fulfills the wish that there be some compass $Comp_p$. Here, $omega_k$ is the groupoid magma, transforming $End(\Omega_i^j)$ into a commutative, associative, and unital object, thus forming a monoid $Mon_k$.
+		
+		% https://q.uiver.app/#q=WzAsNSxbMCwwLCJcXGdhbW1hX3tpLGl9Il0sWzIsMCwiXFxnYW1tYV97aSxqfSJdLFswLDIsIlxcZ2FtbWFfe2osaX0iXSxbMiwyLCJcXGdhbW1hX3tqLGp9Il0sWzEsMSwiXFxtYXRoc2Nye0F9Il0sWzAsMSwiXFxidWxsZXQsaiJdLFswLDIsImosXFxidWxsZXQiLDJdLFsxLDMsImosXFxidWxsZXQiXSxbMiwzLCJcXGJ1bGxldCxqIiwyXSxbMCw0XSxbMiw0XSxbMyw0XSxbMSw0XV0=
+		\[\begin{tikzcd}
+			{\gamma_{i,i}} && {\gamma_{i,j}} \\
+			& {\mathscr{A}} \\
+			{\gamma_{j,i}} && {\gamma_{j,j}}
+			\arrow["{\bullet,j}", from=1-1, to=1-3]
+			\arrow["{j,\bullet}"', from=1-1, to=3-1]
+			\arrow["{j,\bullet}", from=1-3, to=3-3]
+			\arrow["{\bullet,j}"', from=3-1, to=3-3]
+			\arrow[from=1-1, to=2-2]
+			\arrow[from=3-1, to=2-2]
+			\arrow[from=3-3, to=2-2]
+			\arrow[from=1-3, to=2-2]
+		\end{tikzcd}\]
+		
+		Let the above diagram be denoted by $\Gamma^{-1}.$ Here, $\mathscr{A}$ is the pushout of all of the corners, which model cross-sections in a high-energy lattice. A distinct choice of orientation determines a basepoint pair ($\xi,\xi'$), which, when coupled to a constant map $\infty\to k$ in $\mathscr{A}$ yields i or j for each character with $\frac{1}{2}$ probability.
+		
+		We form the interval $\mathbb{I}_\xi$ by ($-\xi,y,\xi'] \times [y, \xi', \xi) = (-\xi,\xi)$ and define the integral
+		
+		$$\int_\mathbb{I}=\int_{-\xi}^{\xi} \frac{d\omega}{dt}$$
+		
+		by Taylor expanding the radial volume of each tubular neighborhood about a zero-manifold of choice. Letting $2\varepsilon$ be the minimum piecewise distance between points $\alpha$, $\alpha'$ yields the function
+		
+		$$i \in \int_\mathbb{I} = i \overset{2}{<<}i' = d(\alpha,\alpha')$$
+		
+		which is effectively a Boolean algebroid. This ensures that a topological realization, and more specifically a configuration space which can realize quanta, is totally disconnected, so we have $\mathbb{R}Man_{Tot}$ giving us the desired discreteness. This is a reflexive realization of $\mathcal{F}\mathcal{D}Hilb$, the category of finite-dimensional Hilbert spaces.
+		
+		\begin{dn}
+			The $\mathbf{Taylor\;expansion\;of\;order\;r}$ (or $\mathbf{r \; jet}$) of a function f at p is defined to be the equivalence class
+			
+			$$j_p^r \coloneq [f]_p^r \in J_p^r = C^\infty(X)/m_p^{r+1}$$
+		\end{dn}
+		
+		A result of E. Borel [18] says that the ``Taylor expansion map"
+		$$j_p:C^\infty \to J_p^\infty$$
+		is surjective.
+		
+			In order to construct an r-jet, we pick a representative r-cell in (call it $\iota_r$) in the path groupoid ${J_p^\infty}^{<1>}$ over the algebra of observables. We then consider a cross-section of the main diagonal $X \times X$ of the geometric representation of the algebra. We then define $s(p)$ by
+			
+			$$s(p) = [a_0(p) + a_1(p)(x-p) + ... + a_r(p)(x-p)^r] \in J_p^r$$
+			
+			and assign to each transformation $\theta: X\times X \longrightarrow G$ to a G-equivariant object the connection $\Gamma_\Delta(s(p))$.
+			
+		% https://q.uiver.app/#q=WzAsNSxbMCwwLCJYIl0sWzIsMCwiWFxcdGltZXMgWCJdLFs0LDAsIkciXSxbMiwxLCJHIl0sWzQsMSwiXFxHYW1tYV9cXERlbHRhIl0sWzAsMSwicHJfe2RpYWd9Il0sWzEsMiwiXFx0aGV0YSJdLFsyLDQsIlxcZ2FtbWFfaSJdLFsxLDMsIlxcdGhldGEiXSxbMyw0LCJcXGdhbW1hX2oiLDFdXQ==
+		\[\begin{tikzcd}
+			X && {X\times X} && G \\
+			&& G && {\Gamma_\Delta}
+			\arrow["{pr_{diag}}", from=1-1, to=1-3]
+			\arrow["\theta", from=1-3, to=1-5]
+			\arrow["{\gamma_i}", from=1-5, to=2-5]
+			\arrow["\theta", from=1-3, to=2-3]
+			\arrow["{\gamma_j}"{description}, from=2-3, to=2-5]
+		\end{tikzcd}\]
+		
+		The quotient algebra
+		
+		$$\mathcal{A}^\bullet(X_\Delta^{(r)})\coloneq \mathcal{A}^{0,\bullet}(X\times X)/\mathfrak{a}_r^\bullet$$
+		
+		in particular is a differential graded algebra (dga). See [19] for more details, and for constructing Dolbeault dgas based at a point.
+\pagebreak
+
+	\section{References}
+	\text{ }
+	[1] D. McDuff, $\emph{Configuration Spaces of Positive and Negative Particles}$ (1974)
+	
+	[2] R.J. Buchanan, $\emph{Kolmogorov Spaces Which are Injective}$ (2023)
+	
+	[3] R.J. Buchanan, P. Emmerson, O. Hancock, $\emph{On the Mechanics of Quasi-Quanta Realization}$
+	
+		 (2023)
+	
+	[4] M. Noonan, $\emph{Calculus on Categories}$ (date unknown)
+	
+	[5] P. Halmos, $\emph{Naive Set Theory}$, (1960)
+	
+	[6] G.B. Segal, $\emph{The locality of holomorphic bundles, and locality in quantum field theory}$ 
+	
+	(date unknown)
+	
+	[7] J.M. Boardman, R.M. Vogt $\emph{Homotopy Everything H-Spaces}$, (1968)
+	
+	[8] G.B. Segal, $\emph{Configuration Spaces and Iterated Loop Spaces}$, (1973)
+	
+	[9] P. Emmerson, $\emph{Quasi-quanta Language Package}$, (2023)
+	
+	[10] C. Barwick, P.J. Haine, S. Glasman, $\emph{Exodromy}$, (2020)
+	
+	[11] R.J. Buchanan, $\emph{On Energy Numbers}$, (2023)
+	
+	[12] C.J. Himmelberg, $\emph{Quotient Uniformities}$, (1966)
+	
+	[13] J.R.B. Cockett, G.S.H. Cruttwell, $\emph{Differential bundles and fibrations for tangent categories}$,
+	
+	 (2018)
+	 
+	 [14] L. Williams $\emph{Configuration Spaces for the Working Undergraduate}$, (2019)
+	 
+	 [15] E. Fadell, L. Neuwirth $\emph{Configuration spaces}$, (1962)
+	 
+	 [16] O. Gabber, L. Ramero $\emph{Almost Ring Theory}$, (2002)
+	 
+	 [17] F.G.S.L. Brandao, et al. $\emph{The second laws of quantum thermodynamics}$ 
+	 
+	 	 (2014)
+	 
+	 [18] E. Borel, $\emph{Sur quelques points de la theorie des fonctions}$, (1895)
+	 
+	 [19] S. Yu, $\emph{Notes on Formal Neighborhoods and Jet Bundles}$, (date unknown)
+	 
+
+
+\end{document}
