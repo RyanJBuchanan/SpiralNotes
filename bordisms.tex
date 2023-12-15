@@ -1,0 +1,249 @@
+\documentclass{article}
+
+\usepackage{amssymb}
+\usepackage{mathtools}
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1\,\delimsize\vert\,\mathopen{}#2}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{babel}
+\usepackage{stackengine}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{quiver}
+\usepackage{mathrsfs}
+\usepackage{braket}
+\usepackage{float}
+\usepackage{scalerel}
+\usepackage{stackengine,wasysym}
+
+\title{Scattering of wordlines along a bordism}
+\author{Ryan J. Buchanan and Parker Emmerson}
+\date{December 8, 2023}
+
+\newtheorem{dn}{Definition}
+\newtheorem{as}{Assumption}
+\newtheorem{rk}{Remark}
+\newtheorem{eg}{Example}
+\newtheorem{pp}{Proposition}
+\newtheorem{ax}{Axiom}
+\newtheorem{tm}{Theorem}
+\newtheorem{lem}{Lemma}
+
+\newcommand\restr[2]{{% we make the whole thing an ordinary symbol
+		\left.\kern-\nulldelimiterspace % automatically resize the bar with \right
+		#1 % the function
+		\littletaller % pretend it's a little taller at normal size
+		\right|_{#2} % this is the delimiter
+}}
+
+\newcommand{\littletaller}{\mathchoice{\vphantom{\big|}}{}{}{}}
+
+\begin{document}
+	\maketitle
+	
+	\begin{abstract}
+		In this paper, ER bridges are discussed as bordisms. We treat these bordisms as fibers, whose sections are holographically entangled to copies of $S^1$. Diffemorphisms of these fibers are discussed, as well as the implication of replacing $S^1$ with the supercircle, and the replacing its underlying algebra with a Lie superalgebra.
+	\end{abstract}
+	
+	\section{Prologue}
+	Let $\mathfrak{W}_{\{\ast\}}$ be the wordline of a particle $\{\ast\} \sim p_0$. Let $\mathscr{P}$ be an equivalence class of fibrations, and let $(\mathscr{P}/\sim) \cong Diff_\mathscr{P}$ denote the quotient of diffemorphisms of $p_\bullet \in \mathscr{P}$. We establish the following equivalence:
+	
+	\begin{ax}
+		For a particle $p_0$ and a topological point $\{\ast\}$, there is a functor
+		
+		$$(|p_0| \longrightarrow {\ast}) \Rightarrow (Stk \longrightarrow Top)$$
+		
+		geometrically realizing a fiber of $\restr{fib(x)}{id}$ such that the restriction is the identity on an isotropy groupoid $\mathscr{G}_x$ of $x$, with $x$ fixed, where $p_0 \hookrightarrow \mathscr{G}_0$.
+	\end{ax}
+	
+	Recall that $\mathscr{G}_0$ is a closed cover of every $\tilde{x} \in \mathcal{G}$, so the inclusion $x \hookrightarrow \mathscr{G}_0 \simeq Id_{x,im(x)}$. We will make the totally lossless immersion\footnote{See [3]}
+	
+	$$\mathfrak{W}_{\{\ast\}} \overset{TotLss}{\hookrightarrow} \mathfrak{St^{Et}}$$
+	
+	so that the realization is lucid.\footnote{See [1]}
+	
+	\begin{dn}[Melvin\footnote{See [2]}]
+		Two orientation-preserving diffeomorphisms $h_i: M_i \longrightarrow M_i$ of closed, oriented $m$-manifolds $M_i(i=0,1)$ are bordant if there is an oriented bordism $W$ between $M_0$ and $M_1$ and an orientation-preserving diffeomorphism $H:W \to W$ such that $\restr{H}{M_i} = h_i$.
+	\end{dn}
+	
+	The collection of bordism classes form an abelian group, $\Delta_m$ under disjoint union:
+	
+	$$b_i \sqcap_i^j b_j \in \mathfrak{B} = \Delta_m$$
+	
+	Let $\mathcal{A}_x$ be an atlas, with $x$ fixed. Let $\phi_k: x_i^j \longrightarrow x_j^i$ be a display over $x$. Then, there is a diffeomorphism of $x$ such that
+	
+	$$T_x(\mathfrak{X}) \cong Diff(x)(i,j)$$
+	
+	for some $i,j$, and for some topological stack $\mathfrak{X}$. This means that there is an adjunction
+	
+	$$\mathfrak{W}_{\{\ast\}} \vdash \mathfrak{X}$$
+	
+	and a foliation $\mathcal{F}_{\tilde{x} \in \mathfrak{X}}$ of the intrinsic fiber of the bordism $W$ such that the phasor, $e^{i \theta}k \simeq \varphi \in \phi_k$, forms a holomorphic copy of $S^1 \otimes \tilde{\mathfrak{W}}_{\{\ast\}}.$ 
+	
+	By Poincare duality, there is a bijection
+	
+	$$\partial(\tilde{\mathfrak{W}}_{\{\ast\}}) \leftrightarrow \bar{\partial}(\tilde{\mathfrak{W}}_{\{\ast\}})$$
+		
+	over the bordism W such that, for some functor $f: x \longrightarrow y$, the holonomy groupoid $Hol_{p_k}^\mathscr{G}$ is surjective on charts around $im(x) = y$. This means that, for a portable neighborhood $\mathcal{U}(p)$, the space of orbits is isotropic under differentiation up to order $k$.
+	
+	Assume that $\mathcal{U}(p)$ is etale. Then, there is a lucid bi-tensor
+	
+	$$Hol_{p_k}^\mathcal{G}(\tilde{W}_{\{\ast\}}) \otimes_{W_0,W_1} Hol_{p_k}^\mathcal{G}(\tilde{W}_{\{\ast\}}) \twoheadrightarrow \mathfrak{TwMan^{Et}}$$
+	
+	which is an epimorophsim on twisted etale manifolds.
+	
+	\section{Bordisms on $\mathscr{A}$}
+	
+	Let $\mathscr{A}$ be the absolute frame discussed in [4]. Let there be a fiber of $\mathscr{A}$, call it $\hat{f}_i$, such that sections of $\hat{f}_i$ (call them $\hat{i}$), are smooth categories. Let $\mathscr{L}_w$ be a Lie algebroid whose stabilizers are of weight $w$. Finally, let there be a series of profinite maps $$\mathscr{A} \xrightarrow{pr_0 \cong w_0} \mathscr{L}_w \xrightarrow{pr_1 \cong w_1} \mathbb{C} \xrightarrow{|\cdot|} \mathbb{R}^{n,m}$$
+	
+	Then,
+	
+	\begin{tm}
+		There is a representative generator, $\mathfrak{g}$ lying in $\mathscr{A}$, whose terminal projection lies in a totally real manifold.
+	\end{tm}
+	
+	Let $\mathfrak{g} \in \mathfrak{G} \sim \tilde{x} \in \mathfrak{X}$. Then, there is a fully faithful embedding 
+	
+	$$\mathcal{U}(\tilde{x}) \hookrightarrow \mathfrak{G} \otimes_{S^{n,m}} \mathfrak{G}$$
+	
+	where $S^{n,m}$ is the supercircle.
+	
+	\subsection{Stratifications of $\mathbb{R}^{n,m}$}
+	
+	Assume that the map $\mathbb{R}^{n,m} \xrightarrow{W_i} \mathbb{R}^{n,m}$ is bordant. Then, we impose a stratification on the sections of $W_i$ as follows. Let each $\mathbb{R}^{n,m}$ be collared. Denote the collars by $Col_\mathbb{R}^{n,m}$. Then, there is a short exact sequence
+	
+	$$Col_\mathbb{R}^{n,m} \tilde{\longrightarrow} fib(\varphi_0(\mathfrak{X})) \to fib(\varphi_1(\mathfrak{X}) \to ... \to fib(\varphi_{max(n,m)}(\mathfrak{X})) \tilde{\longrightarrow} Col_\mathbb{R}^{n,m}$$
+	
+	where each $\phi_i$ is of the form $max(\partial_i(\tilde{x}),\bar{\partial}_i(\tilde{x})).$ This defines a sequence of connections whose terminal object is a relative reference frame in a Heyting lattice. More specifically, the frame $\mathfrak{F}_i^{n,m}$ is a locale which is globally diffeomorphic to a section of $\mathscr{A}$.
+	
+	Essentially, for each value of $(n,m)$, there is a collection of neighborhoods
+	
+	$$\mathcal{U}_i(x) = \int_{\emptyset}^{|p_i|} \frac{\partial_i(n)}{\bar{\partial_i}(m)}$$
+	
+	which serves as the index for the Dirac operator over a section of the tangent bundle of a particle's worldline. This is a refinement of Tillmann's [6] classifying space $B\mathscr{S}_0 \simeq S \times \mathscr{X}$, where $\mathscr{X} \simeq T^\infty \times S^{max(n,m)}$ is an infinite loop space and $T^\infty$ is the infinite-dimensional torus. This refinement allows us to speak about $\emph{conformal fields}$ as anti-chiral modifications of the topological realization of a superalgebra $\mathcal{A}^{n,m}$.
+	
+	\subsubsection{Super Algebroids}
+	Let us further generalize the superalgebra $\mathcal{A}^{n,m}$ to a $\emph{super algebroid}$, $\mathcal{A}_\ast^{n,m}$. 
+	
+	Let $\mathcal{B}$ be a Boolean lattice, and let $\mathcal{A}^{n,m} \longrightarrow \mathcal{B}$ be such that there is an immersion $(\mathcal{A}^{n,m} \longrightarrow \mathcal{B}) \hookrightarrow $$\mathfrak{Frm}$. Let $\mathfrak{Frm} \circ \mathfrak{Frm}^{-1}$ be denoted as a display $\phi_{\mathfrak{Frm}}^\pm$. Then, the Lie groupoid, $\mathcal{G}_\mathfrak{Frm}^\pm$ generated by this display, is an abelian monoid, and its magma is the centralizer for a super algebroid $\mathcal{A}_\ast^{n,m}$. Further, let $\mathcal{H} \supset \mathcal{B}$ be the set of Heyting algebras. The superalgebroid acts on $\mathcal{H}$ by making the modification
+	
+	$$\mathcal{H} \longrightarrow \mathcal{H}_{min(n,m)}^{max(n,m)}$$
+	
+	such that there is a top and bottom element corresponding to an interval encompassing the strata of $\mathbb{R}^{n,m}$.
+	
+	For a $G$-bordism category in dimension two, it was shown by [7] that there is a one-to-one correspondence between the components of a classifying space, $B\mathscr{S}_0$, and the abelianization of a group $G$. This extends to a correspondence for $G_{n,m}$-bordisms, where there is a one-to-one correspondence between the classifying space $B\mathscr{S}_{max(n,m)}$ and the Lie groupoid $\mathcal{G}_\mathfrak{Frm}^\pm$. Here, $\pm$ refers to the duality between even and odd parts, and between creation and annihilation. 
+	
+	\subsection{Mechanics of quantum states}
+	
+	The mechanics of a quantum state of a particle are given by the formula
+	
+	$$\rho_{nm} = \sum_{i=0}^{max(n,m)} <\phi_n(i)|\phi_m(i)>$$
+	
+	where $\phi_n(i)$ is bordant with $\phi_m(i)$, and where the map $\phi_n(i) \Rightarrow \phi_m(i)$ is a natural transformation (2-cell). In the simplest case, is a flat embedding
+	
+	$$\rho_{nm}^\flat \hookrightarrow n_{ij}\tilde{\star} m_{ji} \in^{Hom} \Pi_\infty (Col_\mathbb{R}^{n,m})^2$$
+	
+	which models a Lagrangian submanifold, $\mathcal{L}_W$, called the ``throat" of a wormhole. This is the ``most classical" version of an ER bridge. In the case where the functor splits as
+	
+	$$\rho_{nm}^\flat \hookrightarrow_i^j (n,m)$$
+	
+	we obtain a doublet configuration, and by inserting further elements, thereby expanding the right-hand side as (n,...,m), we obtain a $k$-tuplet realizing the genuine spectrum of a particle's kaleidescopic state well.
+	
+	\subsubsection{Creation operator}
+	Write $Cr_x$ for the map
+	
+	$$\tilde{x} \longrightarrow (\mathcal{U}_i(x))(p_0)$$
+	
+	This is the $\emph{creation}$ operator for an object $x$, which is defined to be a persistence of the set of identities $\sum_{i=0}^{max(n,m)} x_i$. Notice the set of identities is discrete, whereas the creation map itself is smooth. So the object is a discrete realization of a smooth scheme. Recall from [5, definition 2.14] that this may be written as $\delta(\mathcal{D})$, so
+	
+	$$Cr_x \simeq \delta(\mathcal{D})$$
+	
+	is an isomorphism between the ``discretification" of a d-manifold $\mathcal{D}$ and the creation of an ``invariant"\footnote{To use the term loosely, as in defining the set of identities of a particle $p$} object $x$.
+	
+	\subsubsection{Annihilation operator}
+	The inverse of the creation operator, $Cr_{x^{-1}} \circ Cr_x$, is the operator $Cr_x^{-1}$. The annihilation operator is idempotent, meaning $Cr_x^{-1} \circ Cr_x^{-1} \equiv Cr_x^{-1}$.
+	
+	For two quantum states, $\phi_i(n)$ and $\phi_i(m)$, the annihilation operator on $n$ roughly corresponds to the topological realization of $m$. This is roughly a mechanical analogue of the law of excluded middle; that is to say, 
+	
+	$$(m \implies \neg\neg m) \; \forall m \sim p_\tau$$
+	
+	where $\tau$ is the truth value of a particle, roughly corresponding to its quantum expectation value.
+	
+	\section{Wordlines}
+	Recall that a world-line $\mathfrak{W}_{\{\ast\}}$ is an orbifold, $\mathscr{O}$ equipped with a singularity $\{\ast\}$, such that $\sum_{i=0}^{max(n,m)} x_i = \{\ast\}$. A worldline has an time-step evolution given by
+	
+	$$Tr(X_0) \longrightarrow (Tr(X_1) \cong \breve{\mathfrak{g}}(X_0))$$
+	
+	where $\breve{\mathfrak{g}}$ is a nilpotent cocharacter of the generating algebroid of $\mathfrak{W}_{\{\ast\}}^{Top}$. We call a collection composed of a series of the above maps a ``space of states" for a quantum $q$, and each of these states corresponds to the orbit group of a pair of entangled quasi-quanta, $\hat{q}_\alpha, \hat{q}_\beta$. The quasi-quantua themselves are bounded by an open cover of a finite-dimensional Hilbert space $\mathcal{H}^{2d}$, and have singleton sets as isotropy groups. Thus, their inertial weight is always $1\cdot \tau=\tau$. This gives us an exact equivalence between the probabilistic expectation value of a given eigenstate, and a $\emph{physical}$ (more-or-less) object.
+	
+	Let $\breve{\mathfrak{g}}_\pi$ be the set of roots for the algebra $\mathfrak{g}$, and let f be the ``wall-crossing functor"
+	
+	$$\mathcal{D}(\rho)|_W \longrightarrow \mathcal{D}_W(\rho)$$
+	
+	between walls of a Weyl chamber of least and highest weight. We may safely assume that, geometrically, this morphism is represented as a bordism, with collars which act as a boundary between a pure state and a closed partitioning of copies of $S^{n,m}$ into mixed states.
+	
+	The wordline of a particle $p$ is then the trivial fibration 
+	
+	$$S^{n,m} \widetilde{\longrightarrow} \mathfrak{g}(S^{n,m})$$
+	
+	of a stratified etale fundamental group, which is the principle fiber of the totally lossless projection from the holonomy groupoid of a stationary stack with non-zero mean curvature.
+	
+	We can think of this projection as the equipment of a vector bundle $Bun_V$ with a local solid $A$-module, $A_{Bun_V}^\square$. This module is tensorial with respect to the index of section 2.1, so that $\mathcal{I} \otimes A_{Bun_V}^\square \longrightarrow \ket{\Psi_{p_i}} \bra{\Psi_{p_i}}$ gives the standard projection in $\mathbb{R}^{1,3}$.
+	
+	\subsection{Quasi-quanta and bordisms}
+	
+	Suppose there is a kernel $ker(\varphi(x))$, which is ``physical" in the appropriate sense. Let $im(\varphi(x)) = x' = \varphi \circ x \circ \varphi^{-1}$. Suppose $x'$ lies discretely in $\mathfrak{W}_{im(x)}$, and further that there is a bordism:
+	
+	$$W_x \equiv \mathfrak{W}_{im(x)} \sqcap_i \mathfrak{W}_x$$
+	
+	Define $x$ to be 
+	
+	$$x \in \mathbb{R}^{1,3} = \int_{i=\emptyset}^{\bar{q}} \hat{q}_i d\rho_{nm} \times \mathbb{C}^\dagger \hat{q}_{di}$$
+	
+	We model a single quantum, $q$, as the topological realization $|\hat{q}_{i \in \mathcal{I}}|$ of a collection of quasi-quanta which are bordant (semi-conformal) with respect to one another. Further, we let
+	
+	$$\mathbb{R}^{1,3} = \restr{\mathscr{A} \mathbb{C}^n}{\mathbb{C}\mathbb{P}^m} \; \; m \leq n$$
+	
+	such that each slice of any neighborhood bounding a ``physical" object is relative. Essentially, we have a map:
+	
+	$$((d+1) = Physical \longrightarrow d = Physical) \Rightarrow (d+1) = Unphysical$$
+	
+	so that the physicality of a higher dimensional object (say, a $d+1$-sphere) collapses when it is projectively realized around a lower-dimensional locus. In other words, the collapse of the wavefunction is a state transition of of a vacuum expectation value to nullity, or the annihilation of physicality of a value associated with the realization of $q \sim x$. This is observed when a collection of truth values is restricted, via a totally lossless projection, to a finite (discrete) resolution in a topological space.
+	
+	We can assume that the interior of a wormhole has dimension $d+k \; k>0$, whereas the boundary of its collar has dimension $d$. Further, we make the assumption that $dim(\sum_{i=0}^{n} x_i \cong \hat{1} \in K^\times) = dim(Throat_\mu)$, so that the collection of eigenstates (totaling to probability value 1, a unit in some field) has equivalent dimension to the throat of a wormhole, under some metric $\mu$. This gives us holography for free. Thus, we adopt the following definition:
+	
+	\begin{dn}
+		A holographic quantum, $q$, is the topological realization of one of $n$ bordant eigenstates, such that $dim(n) = n$ and $dim(q) < n$, and there is a map
+		
+		$$dim(n) \longrightarrow dim(q)$$
+		
+		that preserves entropy
+	\end{dn}
+	
+	It is questionable whether the entropy-conserving component of the above definition is really necessary. Indeed, we may consider relaxing this criteria, to consider for instance, configuration spaces which are negantropic with respect to an underlying aether.
+	
+		\section{References}
+	
+	\text{ }
+	
+	[1] R.J. Buchanan, $\emph{Some remarks on the generalization of atlases}$, (2023)
+	
+	[2] P. Melvin, $\emph{Bordism of diffeomorphisms}$, (1978)
+	
+	[3] R.J. Buchanan, $\emph{Totally lossless projections}$, (2023)
+	
+	[4] R.J. Buchannan, et al., $\emph{On the Mechanics of Quasi-quanta Realization}$,
+	
+	 (2023)
+	 
+	 [5] J. Steinebrunner, $\emph{The classifying space of the one-dimensional }$
+	 	
+	 	
+	 	$\emph{bordism category and a cobordism model for TC of spaces}$, (2020)
+	 	
+	 [6] U. Tillmann, $\emph{The classifying space of the 1+1 dimensional}$
+	 
+	 $\emph{cobordism category}$, (1996)
+\end{document}
